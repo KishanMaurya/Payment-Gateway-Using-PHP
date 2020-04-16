@@ -9,7 +9,9 @@ Assists you to programmatically create, edit and delete Links on Instamojo in PH
 ![instamozo](https://user-images.githubusercontent.com/45098599/79463348-5b712900-8016-11ea-95ca-6c0b38377089.png)
 ![enter security-pin](https://user-images.githubusercontent.com/45098599/79463372-6330cd80-8016-11ea-8c39-5049637e5dd9.png)
 ![thank-you-page](https://user-images.githubusercontent.com/45098599/79463383-67f58180-8016-11ea-8de0-2cfb0c7f4136.png)
-![Payment Gateway GIF-source](https://user-images.githubusercontent.com/45098599/79463992-2a452880-8017-11ea-98ee-8a0ee111b9e7.gif)
+
+![Payment Gateway GIF-downsized](https://user-images.githubusercontent.com/45098599/79464303-8a3bcf00-8017-11ea-916a-49905128caaa.gif)
+
 
 .
 
