@@ -1,6 +1,12 @@
 # Payment-Gateway-Using-PHP
 Instamozo -PaymentGateway-PHP (PHP , Bootstrap 4+ , Css , HTML-5 , Jquery)
 
+>All Details for Testing Purpose Only !
+>Select -> Card Payment
+Debit = 4242 4242 4242 4242
+Expiry =1221
+cvv = 111
+security pin = 1221
 
 Assists you to programmatically create, edit and delete Links on Instamojo in PHP
 ![home](https://user-images.githubusercontent.com/45098599/79463263-3b416a00-8016-11ea-89eb-a05cc308f9a9.png)
@@ -17,14 +23,15 @@ Assists you to programmatically create, edit and delete Links on Instamojo in PH
 
 Note: If you're using this wrapper with our sandbox environment https://test.instamojo.com/ then you should pass 'https://test.instamojo.com/api/1.1/' as third argument to the Instamojo class while initializing it. API key and Auth token for the same can be obtained from https://test.instamojo.com/developers/ (Details: Test Or Sandbox Account).
 
-$api = new Instamojo\Instamojo(API_KEY, AUTH_TOKEN, 'https://test.instamojo.com/api/1.1/');
+>$api = new Instamojo\Instamojo(API_KEY, AUTH_TOKEN, 'https://test.instamojo.com/api/1.1/');
 
 
 Installing via Composer
 $ php composer.phar require instamojo/instamojo-php
 Note: If you're not using Composer then directly include the contents of src directory in your project.
 
-Usage
+>Usage
+```php
 $api = new Instamojo\Instamojo(API_KEY, AUTH_TOKEN);
 Create a new Payment Request
 try {
@@ -40,9 +47,11 @@ try {
 catch (Exception $e) {
     print('Error: ' . $e->getMessage());
 }
+```
 This will give you JSON object containing details of the Payment Request that was just created.
 
 Get the status or details of a Payment Request
+```php
 try {
     $response = $api->paymentRequestStatus(['PAYMENT REQUEST ID']);
     print_r($response);
@@ -50,11 +59,13 @@ try {
 catch (Exception $e) {
     print('Error: ' . $e->getMessage());
 }
+```
 This will give you JSON object containing details of the Payment Request and the payments related to it. Key for payments is 'payments'.
 
 Here ['PAYMENT REQUEST ID'] is the value of 'id' key returned by the paymentRequestCreate() query.
 
-Get the status of a Payment related to a Payment Request
+>Get the status of a Payment related to a Payment Request
+```php
 try {
     $response = $api->paymentRequestPaymentStatus(['PAYMENT REQUEST ID'], ['PAYMENT ID']);
     print_r($response['purpose']);  // print purpose of payment request
@@ -63,11 +74,14 @@ try {
 catch (Exception $e) {
     print('Error: ' . $e->getMessage());
 }
+```
+
 This will give you JSON object containing details of the Payment Request and the payments related to it. Key for payments is 'payments'.
 
 Here ['PAYMENT REQUEST ID'] is the value of 'id' key returned by the paymentRequestCreate() query and ['PAYMENT ID'] is the Payment ID received with redirection URL or webhook.
 
-Get a list of Payment Requests
+>Get a list of Payment Requests
+```php
 try {
     $response = $api->paymentRequestsList();
     print_r($response);
@@ -75,6 +89,8 @@ try {
 catch (Exception $e) {
     print('Error: ' . $e->getMessage());
 }
+```
+
 This will give you an array containing Payment Requests created so far. Note that the payments related to individual Payment Request are not returned with this query.
 
 paymentRequestsList() also accepts optional parameters for pagination as well as filtering based on created_at and updated_at fields.
@@ -85,8 +101,8 @@ For example:
 $response = $api->paymentRequestsList(50, 1, "2015-11-19T10:12:19Z", "2015-10-29T12:51:36Z");
 For details related to supported datetime format check the documentation: https://www.instamojo.com/developers/request-a-payment-api/#toc-filtering-payment-requests
 
-Available Request a Payment Functions
-You have these functions to interact with the Request a Payment API:
+>Available Request a Payment Functions
+>You have these functions to interact with the Request a Payment API:
 
 paymentRequestCreate(array $payment_request) Create a new Payment Request.
 paymentRequestStatus($id) Get details of Payment Request specified by its unique id.
@@ -104,4 +120,5 @@ send_sms: Set this to true if you want to send SMS to the payer if phone is spec
 redirect_url: set this to a thank-you page on your site. Buyers will be redirected here after successful payment.
 webhook: set this to a URL that can accept POST requests made by Instamojo server after successful payment.
 allow_repeated_payments: To disallow multiple successful payments on a Payment Request pass false for this field. If this is set to false then the link is not accessible publicly after first successful payment, though you can still access it using API(default value: true).
-Further documentation is available at https://docs.instamojo.com/v1.1/docs
+
+>Further documentation is available at https://docs.instamojo.com/v1.1/docs
