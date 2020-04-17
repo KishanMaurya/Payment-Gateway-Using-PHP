@@ -1,7 +1,8 @@
 # Payment-Gateway-Using-PHP
 Instamozo -PaymentGateway-PHP (PHP , Bootstrap 4+ , Css , HTML-5 , Jquery)
 
->First you create an account Instamojo [Instamojo]('https://test.instamojo.com/' "Instamozo")
+>First you create an account on [Instamojo]('https://test.instamojo.com/')
+<br>
 >All Details for Testing Purpose Only !
 >Select -> Card Payment
 ```
