@@ -5,11 +5,12 @@ Instamozo -PaymentGateway-PHP (PHP , Bootstrap 4+ , Css , HTML-5 , Jquery)
 <br>
 >All Details for Testing Purpose Only !
 >Select -> Card Payment
-```
-Debit = 4242 4242 4242 4242
-Expiry =1221
-cvv = 111
-security pin = 1221
+
+``` text
+    Debit = 4242 4242 4242 4242
+    Expiry =1221
+    cvv = 111
+    security pin = 1221
 ```
 
 Assists you to programmatically create, edit and delete Links on Instamojo in PHP
